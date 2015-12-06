@@ -6,6 +6,6 @@
  * Time: 19:41
  */
 foreach ($items as $item):?>
-    <h1><?php $item->id;?></h1>
-    <div><?php $item->name;?></div>
+    <h1><?php echo $item->id;?></h1>
+    <div><?php echo $item->name;?></div>
 <?php endforeach;?>
