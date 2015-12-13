@@ -8,18 +8,11 @@
  */
 //require_once __DIR__."/../classes/DB.php";
 class News
+extends AbstractModel
 {
     public $id;
     public $deptid;
     public $name;
-
-
-    public static function getAll(){
-        $db = new DB;
-        return $db->queryAll("SELECT * FROM people",'News');
-    }
-    public static function getOne($id){
-        $db = new DB;
-        return $db->queryOne("SELECT * FROM people where id=".$id,'News');
-    }
+    protected static $table = 'people';
+    protected static $class = 'News';
 }

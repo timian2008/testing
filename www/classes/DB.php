@@ -26,6 +26,7 @@ class DB
                 $ret[] = $row;
                 //var_dump($row);
             }
+        //var_dump($ret);
         return $ret;
     }
     public function queryOne ($sql, $class = 'stdClass'){
