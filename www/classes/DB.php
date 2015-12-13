@@ -17,15 +17,18 @@ class DB
         mysql_select_db('test');
 
     }
-    public function query($sql, $class = 'stdClass'){
+    public function queryAll($sql, $class = 'stdClass'){
         $res = mysql_query($sql);
         if (false == $res)
-            return false;
+        return false;
         $ret = [];
-        while ($row = mysql_fetch_object($res,$class)){
-            $ret[] = $row;
-            //var_dump($row);
-        }
+            while ($row = mysql_fetch_object($res,$class)){
+                $ret[] = $row;
+                //var_dump($row);
+            }
         return $ret;
+    }
+    public function queryOne ($sql, $class = 'stdClass'){
+        return $this->queryAll($sql,$class)[0];
     }
 }

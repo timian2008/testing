@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/../models/news.php';
+//require_once __DIR__.'/../models/news.php';
 
 class NewsController
 {
@@ -10,9 +10,10 @@ class NewsController
     }
     public function actionOne(){
         echo 'actionOne';
-        die;
-        $id= $_GET['id'];
-        $items = News::getOne();
+        //die;
+
+        $id = $_GET['id'];
+        $items = News::getOne($id);
         include __DIR__.'/../views/news/one.php';
     }
 }
